@@ -82,11 +82,11 @@ Options
 -------
 
 ========================== ==============================================================
+Option                     Description
+========================== ==============================================================
  *DOGPILECACHE_CONFIGS*    Configurations for regions
-========================== ==============================================================
  *DOGPILECACHE_REGIONS*    Regions related with the configurations prefix
-========================== ==============================================================
- *DOGPILECACHE_TEST*       If true, set regions with ``dogpile.cache.null``
+ *DOGPILECACHE_TEST*       If true, set regions with dogpile.cache.null
 ========================== ==============================================================
 
 License
@@ -96,7 +96,5 @@ Licensed under a `MIT license`_.
 
 .. _links:
 
-
 .. _muffin: https://github.com/klen/muffin
-.. _abnerpc: https://github.com/abnerpc
-.. _MIT license: http://opensource.org/licenses/MIT
+.. _MIT license: https://github.com/abnerpc/muffin-dogpilecache/blob/master/LICENSE
