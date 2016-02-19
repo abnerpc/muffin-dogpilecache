@@ -1,6 +1,5 @@
-
 Muffin-DogpileCache
-#################
+###################
 
 .. _description:
 
