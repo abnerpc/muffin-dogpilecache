@@ -1,22 +1,21 @@
 """ Support Dogpile Cache in Muffin framework. """
-import asyncio
+from dogpile.cache.region import make_region
 
 from muffin.plugins import BasePlugin
 
-from dogpile.cache.region import make_region
-
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __project__ = "muffin-dogpilecache"
 __author__ = "Abner Campanha <abnerpc@gmail.com>"
 __license__ = "MIT"
 
-class Plugin(BasePlugin):
 
+class Plugin(BasePlugin):
     """ Dogpile Cache Plugin. """
 
     name = 'dogpilecache'
     defaults = {
         'test': False,
+        'function_key_generator': None,
         'configs': {
             'cache.local.backend': 'dogpile.cache.dbm',
             'cache.local.arguments.filename': './dbmfile.dbm',
@@ -36,16 +35,9 @@ class Plugin(BasePlugin):
             self.cfg.configs = {'cache.test.backend': 'dogpile.cache.null'}
             for k in self.cfg.regions.keys():
                 self.cfg.regions[k] = 'cache.test.'
-        
+
         for k, v in self.cfg.regions.items():
-            new_region = make_region()
+            new_region = make_region(
+                function_key_generator=self.cfg.function_key_generator)
             new_region.configure_from_config(self.cfg.configs, v)
             setattr(self, k, new_region)
-
-    def start(self, app):
-        """ Start plugin. """
-        pass
-
-    def finish(self, app):
-        """ Finish plugin. """
-        pass
