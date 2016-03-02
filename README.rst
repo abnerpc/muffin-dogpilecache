@@ -80,13 +80,14 @@ Decorate your functions:
 Options
 -------
 
-========================== ==============================================================
-Option                     Description
-========================== ==============================================================
- *DOGPILECACHE_CONFIGS*    Configurations for regions
- *DOGPILECACHE_REGIONS*    Regions related with the configurations prefix
- *DOGPILECACHE_TEST*       If true, set regions with dogpile.cache.null
-========================== ==============================================================
+======================================== ================================================
+Option                                   Description
+======================================== ================================================
+ *DOGPILECACHE_CONFIGS*                  Configurations for regions
+ *DOGPILECACHE_REGIONS*                  Regions related with the configurations prefix
+ *DOGPILECACHE_TEST*                     If true, set regions with dogpile.cache.null
+ *DOGPILECACHE_FUNCTION_KEY_GENERATOR*   A function to generate custom cache keys
+======================================== ================================================
 
 License
 =======
